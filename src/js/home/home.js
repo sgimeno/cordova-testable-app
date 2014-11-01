@@ -12,7 +12,7 @@ angular.module('TestableApp.home', [
             templateUrl: 'templates/home.html',
             controller: 'HomeController',
             data: {
-                title: 'Home'
+                title: 'home'
             }
         });
 })

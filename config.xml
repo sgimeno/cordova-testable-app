@@ -9,4 +9,8 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <feature name="Globalization">
+        <param name="id" value="org.apache.cordova.globalization" />
+        <param name="installPath" value="../../Repositories/cordova-plugin-globalization" />
+    </feature>
 </widget>

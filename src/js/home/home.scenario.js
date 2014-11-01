@@ -4,7 +4,7 @@ describe('Home page', function() {
     
     browser.get('http://localhost:8000/browser/www/#/');
 
-    expect(element(by.binding('state.title')).getText()).toEqual('Home');
+    expect(element(by.css('.md-toolbar-tools > span')).getText()).toEqual('Inicio');
 
   });
 

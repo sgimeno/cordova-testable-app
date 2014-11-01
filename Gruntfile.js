@@ -80,7 +80,7 @@ module.exports = function ( grunt ) {
     watch: {
       sources: {
           files: [
-            '<%= src_dir %>/**/*'
+            '<%= src_dir %>/**/*',
           ],
           tasks: ['copy', 'exec:prepare'],
           options: { 
