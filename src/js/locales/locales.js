@@ -2,7 +2,7 @@
 angular.module('TestableApp.locales', [])
 
 .value('es', {
-	'home':'Inicio'
+	'home':'ES for home'
 })
 
 .value('en', {

@@ -5,8 +5,5 @@ Feature: App load
 
   Scenario: Loading the app successfully
     Given I load the app
-    Then I should see "Recibeada regalos"
-
-    #Given I have shared 5 times
-    #When I finish the walkrou
-    #Then I see the home with a reward of the day
+    Then I should see a "title" equal to "ES for home"
+    And I should see a "content" containing "Bacon ipsum dolor amet"

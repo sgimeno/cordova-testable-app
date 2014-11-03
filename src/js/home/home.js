@@ -17,8 +17,11 @@ angular.module('TestableApp.home', [
         });
 })
 
-.controller("HomeController", function($scope, $state) {
+.controller("HomeController", function($scope, $http) {
     
-  $scope.state = $state.current.data;
+    $http.get('http://baconipsum.com/api/?type=all-meat&sentences=1&start-with-lorem=1')
+        .then(function(resp){
+            $scope.baconIpsum = resp.data[0];
+        });
     
 });
