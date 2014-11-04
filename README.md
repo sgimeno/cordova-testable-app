@@ -1,32 +1,33 @@
-###Testable Cordova/Ionic boilerplate
+# Testable Cordova/AngularJS app boilerplate
 
-### Dependencies
- + [npm](https://npmjs.org/)
- + [cordova 4.0.0](http://cordova.apache.org/)
- + [grunt-cli](http://gruntjs.com/)
- + [bower](http://bower.io/)
+An opinionated kickstarter for Cordova/AngularJS testable projects.
 
+***
 
-### Setup
+## Quick Start
+
+Install Node.js and then:
 
 ```
-npm install
-bower install
-grunt build
-cordova build android
+$ git clone git://github.com/joshdmiller/ng-boilerplate
+$ cd ng-boilerplate
+$ npm install -g bower cordova grunt-cli
+$ npm install
+$ cordova platform add <platform>
+$ grunt build
+$ cordova build <platform>
 ```
 
-#####Notes on setup
+Install de generated package in your device.
 
- + bower_components under src (opinionated)
- + compile the JS app into the www directory
-	 + execute ```cordova prepare``` after each change in src directory
- + test with protractor & ```cordova serve```
-	+ point protractor to the browser platform
+Happy hacking!
+ 
+## E2E testing on device
 
+Install appiun and protractor
 
-
-### Random useful commands
-
-adb shell screenrecord /sdcard/FILENAME.mp4
-adb pull /sdcard/FILENAME.mp4
+```
+$ npm install -g protractor appium
+$ appium &
+$ protractor test/support/android.world.js
+```
