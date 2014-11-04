@@ -6,7 +6,7 @@ describe('i18n module', function() {
 
   describe('i18n filter', function(){
 
-    it('should display texts in the user language', inject(function($filter, es) {
+    it('should translate texts to Spanish (ES)', inject(function($filter, es) {
         
         var i18nFilter = $filter('i18n');
         var expectedResult = es.home;

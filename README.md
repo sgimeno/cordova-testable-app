@@ -48,7 +48,7 @@ Install appium and protractor (Use cordova@3.5.0-0.2.7 for appium tests)
 ```
 $ npm install -g protractor appium
 $ appium &
-$ protractor test/support/android.world.js
+$ protractor features/support/android.world.js
 ```
 
 ### E2E testing on browser
@@ -58,5 +58,5 @@ Use cordova@4.0.0 for browser platform tests (You will need to re-add the plugin
 ```
 $ npm install -g cordova
 $ webdriver-manager start
-$ protractor test/support/browser.world.js
+$ protractor features/support/browser.world.js
 ```
