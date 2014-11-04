@@ -1,8 +1,6 @@
-var env = require('./environment.js');
-
 // A small suite to make sure the cucumber framework works.
 exports.config = {
-  seleniumAddress: env.seleniumAddress,
+  seleniumAddress: 'http://localhost:4444/wd/hub',
 
   framework: 'cucumber',
 
@@ -11,9 +9,12 @@ exports.config = {
     './../**/*.feature'
   ],
 
-  capabilities: env.capabilities,
+  capabilities: {
+    browserName: 'chrome',
+    version: 'ANY'
+  },
 
-  baseUrl: env.baseUrl,
+  baseUrl: 'http://localhost:8000',
 
   cucumberOpts: {
     require: ['./../step_definitions/browser.js', './../step_definitions/common.js'],

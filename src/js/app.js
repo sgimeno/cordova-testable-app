@@ -4,7 +4,7 @@ angular.module('TestableApp', [
     'ngCordova',
 
     'TestableApp.home',
-    'TestableApp.locales'
+    'TestableApp.filters.i18n'
 ])
 
 .config(function($urlRouterProvider, $stateProvider){
@@ -18,34 +18,15 @@ angular.module('TestableApp', [
     $document[0].addEventListener('deviceready', function(){
         
         $cordovaGlobalization.getPreferredLanguage()
-        	.then(function(result){
-        		$scope.userLanguage = result.value;
-        	});
+            .then(function(result){
+                $scope.userLanguage = result.value;
+            });
     });
-
 
     $scope.$on('$stateChangeSuccess', function(event, toState, toStateParams, fromState, fromStateParams){
         event.targetScope.state = toState.data || 'Cordova/AngularJS testable app';
     });
     
-})
-
-.filter('i18n', function($injector){
-    
-    return function(word, language){
-        var dictionary, userLanguage;
-        
-        if (word && language){
-            //Load translations map
-            userLanguage = /^([a-z]{2})(?:-[A-Z]{2})?$/
-                .exec(language)
-                .pop();
-
-            dictionary = $injector.get(userLanguage);
-            return dictionary[word];
-        }
-        return word;
-    };
 })
 
 ;
